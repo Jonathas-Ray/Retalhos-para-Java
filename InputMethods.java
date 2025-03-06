@@ -1,6 +1,8 @@
+
 import java.util.Scanner;
 
 public class InputMethods {
+
     // https//www.gihub.com/Jonathas-Ray/
     private static Scanner scanner = new Scanner(System.in);
 
@@ -49,11 +51,16 @@ public class InputMethods {
         String value;
         do {
             value = scanner.nextLine();
-            if (valueChecker(value) == 1) {
-                break;
+            if (value.equals("\n")) {
+                System.out.println("Valor inválido");
             } else {
-                System.out.println("Nesse caso, digite novamente");
+                if (valueChecker(value) == 1) {
+                    break;
+                } else {
+                    System.out.println("Nesse caso, digite novamente");
+                }
             }
+
         } while (true);
 
         return value;
@@ -76,8 +83,3 @@ public class InputMethods {
         } while (true);
     }
 }
-
-/*
-Possíveis tratamentos de erro sugeridos pelo chat:
- + Entrada de texto vazio (apenas o "\n") no input_String;
-*/
