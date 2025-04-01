@@ -17,13 +17,12 @@ public class InputMethods {
                 value = scanner.nextInt();
                 scanner.nextLine(); //Apaga a quebra de linha do Buffer
                 if (valueChecker(value) == 1) {
-                    break;
+                    return value;
                 } else {
                     System.out.println("Nesse caso, digite novamente");
                 }
             }
         }
-        return value;
     }
     
     public static int input_Int() {
@@ -36,13 +35,12 @@ public class InputMethods {
                 value = scanner.nextInt();
                 scanner.nextLine(); //Apaga a quebra de linha do Buffer
                 if (valueChecker(value) == 1) {
-                    break;
+                    return value;
                 } else {
                     System.out.println("Nesse caso, digite novamente");
                 }
             }
         }
-        return value;
     }
 
     public static double input_Double(String output) {
@@ -56,13 +54,12 @@ public class InputMethods {
                 value = scanner.nextDouble();
                 scanner.nextLine(); //Apaga a quebra de linha do Buffer
                 if (valueChecker(value) == 1) {
-                    break;
+                    return value;
                 } else {
                     System.out.println("Nesse caso, digite novamente");
                 }
             }
         }
-        return value;
     }
     
     public static double input_Double() {
@@ -75,13 +72,12 @@ public class InputMethods {
                 value = scanner.nextDouble();
                 scanner.nextLine(); //Apaga a quebra de linha do Buffer
                 if (valueChecker(value) == 1) {
-                    break;
+                    return value;
                 } else {
                     System.out.println("Nesse caso, digite novamente");
                 }
             }
         }
-        return value;
     }
 
     public static String input_String(String output) {
@@ -93,30 +89,28 @@ public class InputMethods {
                 System.out.println("Valor inválido");
             } else {
                 if (valueChecker(value) == 1) {
-                    break;
+                    return value;
                 } else {
                     System.out.println("Nesse caso, digite novamente");
                 }
             }
         } while (true);
-        return value;
     }
     
     public static String input_String() {
         String value;
         do {
             value = scanner.nextLine();
-            if (value.equals("\n")) {
+            if (value.isBlank()) {
                 System.out.println("Valor inválido");
             } else {
                 if (valueChecker(value) == 1) {
-                    break;
+                    return value;
                 } else {
                     System.out.println("Nesse caso, digite novamente");
                 }
             }
         } while (true);
-        return value;
     }
 
     public static <T> int valueChecker(T value) {
