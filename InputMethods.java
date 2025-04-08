@@ -16,11 +16,7 @@ public class InputMethods {
             } else {
                 value = scanner.nextInt();
                 scanner.nextLine(); //Apaga a quebra de linha do Buffer
-                if (valueChecker(value) == 1) {
-                    return value;
-                } else {
-                    System.out.println("Nesse caso, digite novamente");
-                }
+                return value;
             }
         }
     }
@@ -34,11 +30,7 @@ public class InputMethods {
             } else {
                 value = scanner.nextInt();
                 scanner.nextLine(); //Apaga a quebra de linha do Buffer
-                if (valueChecker(value) == 1) {
-                    return value;
-                } else {
-                    System.out.println("Nesse caso, digite novamente");
-                }
+                return value;
             }
         }
     }
@@ -53,11 +45,7 @@ public class InputMethods {
             } else {
                 value = scanner.nextDouble();
                 scanner.nextLine(); //Apaga a quebra de linha do Buffer
-                if (valueChecker(value) == 1) {
-                    return value;
-                } else {
-                    System.out.println("Nesse caso, digite novamente");
-                }
+                return value;
             }
         }
     }
@@ -71,11 +59,7 @@ public class InputMethods {
             } else {
                 value = scanner.nextDouble();
                 scanner.nextLine(); //Apaga a quebra de linha do Buffer
-                if (valueChecker(value) == 1) {
-                    return value;
-                } else {
-                    System.out.println("Nesse caso, digite novamente");
-                }
+                return value;
             }
         }
     }
@@ -85,14 +69,10 @@ public class InputMethods {
         String value;
         do {
             value = scanner.nextLine();
-            if (value.equals("\n")) {
+            if (value.isBlank()) {
                 System.out.println("Valor inválido");
             } else {
-                if (valueChecker(value) == 1) {
-                    return value;
-                } else {
-                    System.out.println("Nesse caso, digite novamente");
-                }
+                return value;
             }
         } while (true);
     }
@@ -104,16 +84,12 @@ public class InputMethods {
             if (value.isBlank()) {
                 System.out.println("Valor inválido");
             } else {
-                if (valueChecker(value) == 1) {
-                    return value;
-                } else {
-                    System.out.println("Nesse caso, digite novamente");
-                }
+                return value;
             }
         } while (true);
     }
 
-    public static <T> int valueChecker(T value) {
+    public static <T> int input_validator(T value) {
         System.out.println("O valor " + value + " é o que desejava adicionar?\n1 - Sim\t6 - Não");
         do {
             int result = scanner.nextInt();
