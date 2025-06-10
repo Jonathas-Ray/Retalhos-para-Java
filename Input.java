@@ -1,12 +1,12 @@
 
 import java.util.Scanner;
 
-public class InputMethods {
+public class Input {
 
     // https//www.gihub.com/Jonathas-Ray/
     private static Scanner scanner = new Scanner(System.in);
-
-    public static int input_Int(String output) {
+    
+    public static int Int(String output) {
         System.out.println(output);
         int value = 0;
         while (true) {
@@ -21,7 +21,7 @@ public class InputMethods {
         }
     }
     
-    public static int input_Int() {
+    public static int Int() {
         int value = 0;
         while (true) {
             if (!(scanner.hasNextInt())) {
@@ -35,7 +35,7 @@ public class InputMethods {
         }
     }
 
-    public static double input_Double(String output) {
+    public static double Double(String output) {
         System.out.println(output);
         Double value;
         while (true) {
@@ -50,7 +50,7 @@ public class InputMethods {
         }
     }
     
-    public static double input_Double() {
+    public static double Double() {
         Double value;
         while (true) {
             if (!(scanner.hasNextDouble())) {
@@ -64,7 +64,7 @@ public class InputMethods {
         }
     }
 
-    public static String input_String(String output) {
+    public static String String(String output) {
         System.out.println(output);
         String value;
         do {
@@ -77,7 +77,7 @@ public class InputMethods {
         } while (true);
     }
     
-    public static String input_String() {
+    public static String String() {
         String value;
         do {
             value = scanner.nextLine();
@@ -85,23 +85,6 @@ public class InputMethods {
                 System.out.println("Valor inválido");
             } else {
                 return value;
-            }
-        } while (true);
-    }
-
-    public static <T> int input_validator(T value) {
-        System.out.println("O valor " + value + " é o que desejava adicionar?\n1 - Sim\t6 - Não");
-        do {
-            int result = scanner.nextInt();
-            scanner.nextLine(); //Apaga a quebra de linha do Buffer
-            switch (result) {
-                case 1:
-                    return 1;
-                case 6:
-                    return 0;
-                default:
-                    System.out.println("Valor não reconhecido, digite de novo");
-                    break;
             }
         } while (true);
     }
