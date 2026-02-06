@@ -9,7 +9,7 @@ public class Input {
         assim devido a existência do texto "33" e o Java não ficar feliz com isso nós ficaremos com uma 
         entrada para números e outra para textos.
     */
-    //Importado o arquivo: Input.Number() para números e Input.String() para textos, ambos com ou sem mensagens de saída.
+    //Importado o arquivo: Input.Number() para números e Input.String() para textos, ambos com ou sem mensagens de saída como parâmetro.
 
     private static Scanner scanner = new Scanner(System.in);
     
